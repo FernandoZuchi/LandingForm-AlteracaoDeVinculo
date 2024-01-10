@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#06aa5e">
+    <meta name="msapplication-navbutton-color" content="#06aa5e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Trancamento | Codi Academy</title>
+    <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="./assets/js/script.js" defer></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+</head>
+
+<body>
+    <main class="card-container slideUp-animation">
+        <div class="image-container">
+            <h1 class="company">Codi Academy</h1>
+            <br><br>
+            <p class="company">Requisitos para trancar um curso na Codi Academy</p>
+            <br><br><br>
+            <ul class="list">
+                <li>
+                    Você pode trancar o curso por no máximo 6 meses
+                </li>
+                <li>
+                    Estar no corrente curso a mais de 1 mês
+                </li>
+                <li>
+                    O trancamento não pode ser feito no último mês de curso
+                </li>
+            </ul>
+        </div>
+        <form action="https://formsubmit.co/ajax/nandozuchi07@gmail.com" method="POST">
+            <div class="form-container slideRight-animation">
+
+                <h1 class="form-header">
+                    Preencha o formulário
+                </h1>
+
+                <div class="input-container">
+                    <label for="f-name"></label>
+                    <input type="text" name="f-name" id="f-name" required>
+                    <span>
+                        Nome completo
+                    </span>
+                    <div class="error"></div>
+                </div>
+
+                <div class="input-container">
+                    <label for="mail">
+                    </label>
+                    <input type="email" name="mail" id="mail" required>
+                    <span>
+                        E-mail
+                    </span>
+                    <div class="error"></div>
+                </div>
+
+                <div class="input-container">
+                    <label for="curso">Curso</label>
+                    <select name="curso" id="curso" required>
+                        <option value="" disabled selected>Escolha o curso</option>
+                        <option value="frontend">Desenvolvimento FrontEnd</option>
+                        <option value="backend">Desenvolvimento Backend</option>
+                        <option value="fullstack">Desenvolvimento FullStack</option>
+                    </select>
+                    <div class="error"></div>
+                </div>
+
+                <div class="input-container">
+                    <label for="start-date">Início do curso</label>
+                    <input type="date" name="start-date" id="start-date" required>
+                    <div class="error"></div>
+                </div>
+
+                <div id="btm">
+                    <button type="submit" class="submit-btn">Solicitar trancamento</button>
+                </div>
+
+                <div class="modal-overlay disabled" id="success-modal">
+                    <div class="modal">
+                        <p>Seu requerimento foi concluído e um e-mail para suporte foi enviado.</p>
+                        <button id="close-modal-btn">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>
