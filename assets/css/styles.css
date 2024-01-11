@@ -485,7 +485,7 @@ select:valid {
     display: none;
 }
 .close-modal-btn:hover {
-    background-color: firebrick;
+    background-color: var(--dusky-green);
     color: lightgray;
 }
 
