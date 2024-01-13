@@ -1,8 +1,10 @@
 // Selecionando os elementos do DOM
+//trancamento@codiacademy.com
 const submitBtn = document.querySelector('.submit-btn'),
     email = document.querySelector('#mail'),
     errorDisplayers = document.getElementsByClassName('error'),
     cardContainer = document.querySelector('.card-container'),
+    outroOverlay = document.querySelector('.outro-overlay'),
     form = document.querySelector('form')
 
 // Função para validar e-mail
@@ -12,24 +14,24 @@ function isValidEmail(email) {
     return emailRegex.test(email);
 }
 
-// Adicionar um event listener para o botão de fechar o modal
-const closeModalBtn = document.getElementById('close-modal-btn');
-closeModalBtn.addEventListener('click', () => {
-    const successModal = document.getElementById('success-modal');
-    successModal.style.display = 'none';
+function isTrancamentoPermitido(startDate) {
+    // Aqui, estamos assumindo que o curso dura 12 meses
+    const courseDurationMonths = 12;
+    const currentDate = new Date();
+    const courseStartDate = new Date(startDate);
 
-    // Limpar o formulário
-    form.reset();
+    // Calcule a data de início do último mês do curso
+    const lastMonthStartDate = new Date(courseStartDate);
+    lastMonthStartDate.setMonth(lastMonthStartDate.getMonth() + courseDurationMonths);
 
-    // Recarregar a página
-    location.reload();
-});
-
+    // Verifique se a data atual não está no último mês do curso
+    return currentDate < lastMonthStartDate;
+}
 
 // Event listener para o botão de envio
 form.addEventListener('submit', async (e) => {
     e.preventDefault()
-
+    
     // Limpar mensagens de erro
     for (const errorDisplayer of errorDisplayers) {
         errorDisplayer.textContent = '';
@@ -50,15 +52,11 @@ form.addEventListener('submit', async (e) => {
     }
 
     const startDate = document.querySelector('#start-date').value;
-    const today = new Date();
-    const lastMonthOfCourse = new Date(startDate);
-    lastMonthOfCourse.setMonth(lastMonthOfCourse.getMonth() + 11);
-    
-    // Verificar se a data de início está dentro do último mês
-    if (today >= lastMonthOfCourse && today < new Date(startDate).setMonth(lastMonthOfCourse.getMonth() + 1)) {
-        errorDisplayers[3].textContent = 'Você não pode trancar o curso no último mês.';
+    if (!startDate || !isTrancamentoPermitido(startDate)) {
+        errorDisplayers[3].textContent = 'A data de início do curso não permite trancamento.';
         isValid = false;
     }
+
 
     if (isValid) {
         try {
@@ -71,8 +69,14 @@ form.addEventListener('submit', async (e) => {
             if (response.ok) {
                 // Exibir o modal
                 const successModal = document.getElementById('success-modal');
-                successModal.classList.remove('disabled');
                 successModal.style.display = 'flex';
+
+                // Adicionar um botão para fechar o modal
+                const closeModalBtn = document.getElementById('close-modal-btn');
+                closeModalBtn.addEventListener('click', () => {
+                    successModal.style.display = 'none';
+                    location.reload();
+                });
             } else {
                 console.error('Erro ao enviar e-mail.');
             }

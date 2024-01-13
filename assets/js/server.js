@@ -21,7 +21,7 @@ app.post('/enviar-email', (req, res) => {
     const data = {
         from: 'sandbox07b52750d47b40e0a3d66ada9b350588.mailgun.org',
         to: 'nandoozorioch@gmail.com',
-        subject: 'Requerimento de trancamento de curso',
+        subject: 'Assunto do E-mail',
         text: `Nome: ${nome}\nEmail: ${email}\nCurso: ${curso}\nData de Início: ${start_date}`,
     };
 
