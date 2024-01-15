@@ -20,7 +20,7 @@ app.post('/enviar-email', (req, res) => {
 
     const data = {
         from: 'sandbox07b52750d47b40e0a3d66ada9b350588.mailgun.org',
-        to: 'nandoozorioch@gmail.com',
+        to: 'trancamentocodiacademy@gmail.com',
         subject: 'Requerimento de trancamento',
         text: `Nome: ${nome}\nEmail: ${email}\nCurso: ${curso}\nData de Início: ${start_date}`,
     };
