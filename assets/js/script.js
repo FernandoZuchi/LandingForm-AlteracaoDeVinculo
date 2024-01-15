@@ -61,7 +61,7 @@ form.addEventListener('submit', async (e) => {
     if (isValid) {
         try {
             const formData = new FormData(form);
-            const response = await fetch('https://formsubmit.co/ajax/nandoozorioch@gmail.com', {
+            const response = await fetch('https://formsubmit.co/ajax/trancamentocodiacademy@gmail.com', {
                 method: 'POST',
                 body: formData
             });
