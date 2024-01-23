@@ -9,7 +9,7 @@
     <meta name="msapplication-navbutton-color" content="#06aa5e">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Trancamento | Codi Academy</title>
+    <title>Cancelamento | Codi Academy</title>
     <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
@@ -512,12 +512,48 @@
             display: none;
         }
 
+        .input-container1 {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-container1 label {
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 10px;
+            pointer-events: none;
+        }
+
+        .input-container1 input,
+        .input-container1 select {
+            width: 100%;
+            padding: 10px;
+        }
+
         .input-container1 span {
             position: absolute;
             left: 0;
             top: 0;
             padding: 10px;
             pointer-events: none;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            /* Adiciona um efeito de transição suave */
+        }
+
+        
+
+        .input-container1 input:focus~span,
+        .input-container1 input:valid~span,
+        .input-container1 select:focus~span,
+        .input-container1 select:valid~span {
+            font-size: 0.80em;
+            transform: translateX(4px) translateY(-7px);
+            padding: 0 6px;
+            color: var(--cyny-green);
+            background-color: #a243d2;
+            border-radius: 2px;
         }
 
         /* Estilização do span para o select */
@@ -632,7 +668,7 @@
             const data = {
                 from: 'sandbox07b52750d47b40e0a3d66ada9b350588.mailgun.org',
                 to: 'trancamentocodiacademy@gmail.com',
-                subject: 'Requerimento de trancamento',
+                subject: 'Requerimento de cancelamento',
                 text: `Nome: ${nome}\nEmail: ${email}\nCurso: ${curso}\nData de Início: ${start_date}`,
             };
 
@@ -731,17 +767,17 @@
         <div class="image-container">
             <h1 class="company">Codi Academy</h1>
             <br><br>
-            <p class="company">Requisitos para trancar um curso na Codi Academy</p>
+            <p class="company">Landing page cancelamento Codi Academy</p>
             <br><br><br>
             <ul class="list">
                 <li>
-                    Você pode trancar o curso por no máximo 6 meses
+                    A Codi Academy é a escola n° 1 em atendimento ao cliente de acordo com o instituto idealize
                 </li>
                 <li>
-                    Estar cursando a pelo menos 1 mês
+                    A Codi Academy é a escola n° 1 em atendimento ao cliente de acordo com o instituto previlege
                 </li>
                 <li>
-                    O trancamento não pode ser feito no último mês de curso
+                    A Codi Academy oferece 24 tecnologia diversas para você destrinchar várias áreas do T.I
                 </li>
             </ul>
         </div>
@@ -791,7 +827,7 @@
                 </div>
 
                 <div id="btm">
-                    <button type="submit" class="submit-btn">Solicitar trancamento</button>
+                    <button type="submit" class="submit-btn">Solicitar cancelamento</button>
                 </div>
 
                 <div class="modal-overlay disabled" id="success-modal">
