@@ -234,6 +234,7 @@
             height: 70px;
             align-self: flex-start;
             padding: 2% 0 0 5%;
+            margin-left: 12px;
         }
 
         .outro-overlay>.company {
@@ -243,6 +244,10 @@
 
         .mobile-btm-nav {
             display: none;
+        }
+
+        .company h1 {
+            margin-left: 12px;
         }
 
         .company p {
@@ -507,6 +512,14 @@
             display: none;
         }
 
+        .input-container1 span {
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 10px;
+            pointer-events: none;
+        }
+
         /* Estilização do span para o select */
         .input-container select~span {
             position: absolute;
@@ -769,10 +782,12 @@
                     <div class="error"></div>
                 </div>
 
-                <div class="input-container">
-                    <label for="start-date">Início do curso</label>
-                    <input type="date" name="data-inicio" id="start-date" required>
-                    <div class="error"></div>
+                <div class="input-container1">
+                    <label for="motivo"></label>
+                    <input type="textarea" id="motivo" name="motivo" rows="4" style="width: 300px; height: 70px;">
+                    <span>
+                        Motivo do cancelamento
+                    </span>
                 </div>
 
                 <div id="btm">
