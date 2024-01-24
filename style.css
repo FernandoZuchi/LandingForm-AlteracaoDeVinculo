@@ -56,7 +56,8 @@ body {
     color: white;
 }
 
-input {
+input,
+textarea {
     display: block;
     border-radius: 4px;
     border: 0;
@@ -498,6 +499,23 @@ select option[disabled] {
     display: none;
 }
 
+textarea {
+    display: block;
+    border-radius: 4px;
+    border: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .4);
+    padding: 6px 6px 6px 10px;
+    margin-top: 5px;
+    background-color: rgba(255, 255, 255, 0);
+    transition: all .5s ease-in;
+    color: var(--opac-white);
+    resize: none; /* Adicione esta linha para desabilitar o redimensionamento */
+}
+
+textarea::placeholder {
+    content: none;
+}
+
 
 /* Estilização do span para o select */
 .input-container select~span {
@@ -536,57 +554,6 @@ select:focus-visible {
 select:valid {
     border: 1px solid var(--green);
 }
-
-textarea {
-    display: block;
-    width: 100%;
-    border-radius: 4px;
-    border: 0;
-    border-bottom: 1px solid rgba(0, 0, 0, .4);
-    padding: 6px 6px 6px 10px;
-    margin-top: 5px;
-    background-color: rgba(255, 255, 255, 0);
-    transition: all .5s ease-in;
-    color: var(--opac-white);
-    outline: none;
-    resize: vertical; /* Permite redimensionar verticalmente apenas */
-}
-
-/* Estilização do span para o textarea */
-.input-container textarea~span {
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 10px;
-    pointer-events: none;
-}
-
-/* Efeitos de foco e valor válido para o textarea */
-textarea:focus~span,
-textarea:valid~span {
-    font-size: 10px;
-    transform: translateX(4px) translateY(-7px);
-    font-size: 0.80em;
-    padding: 0 6px;
-    color: var(--cyny-green);
-    background-color: var(--dusky-green);
-    color: white;
-    border-radius: 2px;
-}
-
-/* Efeito de foco para o textarea */
-textarea:focus,
-textarea:focus-visible {
-    border: 1px solid var(--green);
-    box-shadow: 0 0 5px rgb(0, 0, 0, .3);
-    outline: none;
-}
-
-/* Efeito de valor válido para o textarea */
-textarea:valid {
-    border: 1px solid var(--green);
-}
-
 
 .success-message {
     display: none;
