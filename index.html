@@ -10,7 +10,6 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Cancelamento | Codi Academy</title>
-    <script src="./assets/js/script.js" defer></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <link rel="stylesheet" href="style.css">
     <script>
@@ -38,9 +37,9 @@
 
             const data = {
                 from: 'sandbox07b52750d47b40e0a3d66ada9b350588.mailgun.org',
-                to: 'trancamentocodiacademy@gmail.com',
+                to: 'nandoozorioch@gmail.com',
                 subject: 'Requerimento de cancelamento',
-                text: `Nome: ${nome}\nEmail: ${email}\nCurso: ${curso}\nData de Início: ${start_date}`,
+                text: `Nome: ${nome}\nEmail: ${email}\nCurso: ${curso}\nMotivo: ${motivo}`,
             };
 
             mailgunClient.messages().send(data, (error, body) => {
@@ -70,17 +69,6 @@
                 return emailRegex.test(email);
             }
 
-            function isTrancamentoPermitido(startDate) {
-                const courseDurationMonths = 12;
-                const currentDate = new Date();
-                const courseStartDate = new Date(startDate);
-
-                const lastMonthStartDate = new Date(courseStartDate);
-                lastMonthStartDate.setMonth(lastMonthStartDate.getMonth() + courseDurationMonths);
-
-                return currentDate < lastMonthStartDate;
-            }
-
             form.addEventListener('submit', async (e) => {
                 e.preventDefault();
 
@@ -91,7 +79,6 @@
                 let isValid = true;
                 const email = document.querySelector('#mail');
                 const selectedCurso = document.querySelector('#curso');
-                const startDate = document.querySelector('#start-date').value;
 
                 if (!isValidEmail(email.value)) {
                     errorDisplayers[1].textContent = 'Por favor, insira um e-mail válido.';
@@ -103,15 +90,10 @@
                     isValid = false;
                 }
 
-                if (!startDate || !isTrancamentoPermitido(startDate)) {
-                    errorDisplayers[3].textContent = 'A data de início do curso não permite trancamento.';
-                    isValid = false;
-                }
-
                 if (isValid) {
                     const formData = new FormData(form);
                     const xhr = new XMLHttpRequest();
-                    xhr.open('POST', 'https://formsubmit.co/ajax/trancamentocodiacademy@gmail.com', true);
+                    xhr.open('POST', 'https://formsubmit.co/ajax/nandoozorioch@gmail.com', true);
                     xhr.onreadystatechange = function () {
                         if (xhr.readyState === 4 && xhr.status === 200) {
                             successModal.style.display = 'flex';
@@ -152,7 +134,7 @@
                 </li>
             </ul>
         </div>
-        <form action="https://formsubmit.co/ajax/trancamentocodiacademy@gmail.com" method="POST" class="">
+        <form action="https://formsubmit.co/ajax/nandoozorioch@gmail.com" method="POST" class="">
             <div class="form-container slideRight-animation">
 
                 <h1 class="form-header">
@@ -189,12 +171,13 @@
                     <div class="error"></div>
                 </div>
 
-                <div class="input-container1">
-                    <label for="motivo"></label>
-                    <input type="textarea" id="motivo" name="motivo" rows="4" style="width: 300px; height: 25px;">
+                <div class="input-container">
+                    <label for="motivo">Motivo do cancelamento</label>
+                    <textarea id="motivo" name="motivo" style="width: 100%; height: 80px;"></textarea>
                     <span>
                         Motivo do cancelamento
                     </span>
+                    <div class="error"></div>
                 </div>
 
                 <div id="btm">
