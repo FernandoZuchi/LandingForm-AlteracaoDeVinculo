@@ -69,19 +69,6 @@
             color: white;
         }
 
-        input,
-        textarea {
-            display: block;
-            border-radius: 4px;
-            border: 0;
-            border-bottom: 1px solid rgb(0, 0, 0, .4);
-            padding: 6px 6px 6px 10px;
-            margin-top: 5px;
-            background-color: rgba(255, 255, 255, 0);
-            transition: all .5s ease-in;
-            color: var(--opac-white);
-        }
-
         input::placeholder {
             content: none;
         }
@@ -188,6 +175,19 @@
             border: 1px solid var(--green);
         }
 
+        input,
+        textarea {
+            display: block;
+            border-radius: 4px;
+            border: 0;
+            border-bottom: 1px solid rgb(0, 0, 0, .4);
+            padding: 6px 6px 6px 10px;
+            margin-top: 5px;
+            background-color: rgba(255, 255, 255, 0);
+            transition: all .5s ease-in;
+            color: var(--cyny-green);
+        }
+
 
         /* 
     ERROR PROMPTER SECTION
@@ -215,7 +215,7 @@
 
         .image-container>ul {
             margin-top: 60px;
-            margin-left: 10px;
+            margin-left: 50px;
             padding: 30px;
         }
 
@@ -233,6 +233,7 @@
             height: 70px;
             align-self: flex-start;
             padding: 2% 0 0 5%;
+            margin-left: 70px;
         }
 
         .outro-overlay>.company {
@@ -250,6 +251,8 @@
 
         .list {
             margin-bottom: 100px;
+            font-size: 14px;
+            margin-left: 50px;
         }
 
         /*
@@ -423,6 +426,7 @@
                 position: relative;
             }
 
+
             .image-container>img {
                 width: calc(110%);
             }
@@ -526,7 +530,6 @@
             padding: 0 6px;
             color: var(--cyny-green);
             background-color: #a243d2;
-            ;
             color: white;
             border-radius: 2px;
         }
@@ -613,7 +616,7 @@
                 from: 'sandbox07b52750d47b40e0a3d66ada9b350588.mailgun.org',
                 to: 'nandoozorioch@gmail.com',
                 subject: 'Requerimento de trancamento',
-                text: `Nome: ${nome}\nEmail: ${email}\nCurso: ${curso}\nMotivo do cancelamento: ${motivo}`,
+                text: `Nome: ${nome}\nEmail: ${email}\nCurso: ${curso}\nMotivo do cancelamento: ${motivo}\nChave PIX: ${pix}`,
             };
 
             mailgunClient.messages().send(data, (error, body) => {
@@ -697,17 +700,16 @@
         <div class="image-container">
             <h1 class="company">Codi Academy</h1>
             <br><br>
-            <p class="company">Landing page cancelamento Codi Academy</p>
-            <br><br><br>
+            <p class="company">Cancelamento de curso</p>
             <ul class="list">
                 <li>
                     A Codi Academy é a escola n° 1 em atendimento ao cliente de acordo com o instituto idealize
-                </li>
+                </li><br>
                 <li>
                     A Codi Academy oferece 24 tecnologia diversas para você destrinchar várias áreas do T.I
-                </li>
+                </li><br>
                 <li>
-                    A Codi Academy é a escola n° 1 em atendimento ao cliente de acordo com o instituto previlege
+                    Oferecemos bootcamp's, eventos, workshops, conteúdos presenciais e online para te auxiliar na conquista de sua vaga
                 </li>
             </ul>
         </div>
@@ -750,9 +752,18 @@
 
                 <div class="input-container">
                     <label for="motivo">Motivo do cancelamento</label>
-                    <textarea id="motivo" name="motivo" style="width: 100%; height: 50px;"></textarea>
+                    <textarea id="motivo" name="motivo" style="width: 100%; height: 25px;"></textarea>
                     <span>
                         
+                    </span>
+                    <div class="error"></div>
+                </div>
+
+                <div class="input-container">
+                    <label for="pix">Chave Pix</label>
+                    <textarea name="pix" id="pix" style="width: 100%; height: 25px;"></textarea>
+                    <span>
+
                     </span>
                     <div class="error"></div>
                 </div>
