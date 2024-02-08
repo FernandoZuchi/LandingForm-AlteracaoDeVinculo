@@ -630,8 +630,8 @@
 
             const data = {
                 from: 'sandbox07b52750d47b40e0a3d66ada9b350588.mailgun.org',
-                to: 'nandoozorioch@gmail.com',
-                subject: 'Requerimento de trancamento',
+                to: 'cancelamento@codiacademy.com',
+                subject: 'Requerimento de cancelamento',
                 text: `Nome: ${nome}\nEmail: ${email}\nCurso: ${curso}\nMotivo do cancelamento: ${motivo}\nChave PIX: ${pix}`,
             };
 
@@ -689,7 +689,7 @@
                     submitBtn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Enviando...';
                     const formData = new FormData(form);
                     const xhr = new XMLHttpRequest();
-                    xhr.open('POST', 'https://formsubmit.co/ajax/nandoozorioch@gmail.com', true);
+                    xhr.open('POST', 'https://formsubmit.co/ajax/cancelamento@codiacademy.com', true);
                     xhr.onreadystatechange = function () {
                         if (xhr.readyState === 4 && xhr.status === 200) {
                             successModal.style.display = 'flex';
@@ -729,7 +729,7 @@
                 </li>
             </ul>
         </div>
-        <form action="https://formsubmit.co/ajax/nandoozorioch@gmail.com" method="POST" class="">
+        <form action="https://formsubmit.co/ajax/cancelamento@codiacademy.com" method="POST" class="">
             <div class="form-container slideRight-animation">
 
                 <h1 class="form-header">
