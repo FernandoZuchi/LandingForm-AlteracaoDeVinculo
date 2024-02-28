@@ -53,6 +53,7 @@
         /*
     FORM SECTION
 */
+
         .form-container {
             width: 50vw;
             display: grid;
@@ -84,6 +85,11 @@
 
         input::placeholder {
             content: none;
+        }
+
+        /*SMALL CHANGE*/
+        .span1 {
+            font-size: 14px;
         }
 
         span {
@@ -614,13 +620,14 @@
         const mailgunClient = mailgun(mailgunConfig);
 
         app.post('/enviar-email', (req, res) => {
-            const { nome, email, curso, start_date } = req.body;
+            const { nome, email, curso, start_date, intervalo } = req.body;
 
+            //CHANGES
             const data = {
                 from: 'sandbox07b52750d47b40e0a3d66ada9b350588.mailgun.org',
-                to: 'trancamentocodiacademy@gmail.com',
+                to: 'nandozuchi07@gmail.com',
                 subject: 'Requerimento de trancamento',
-                text: `Nome: ${nome}\nEmail: ${email}\nCurso: ${curso}\nData de Início: ${start_date}`,
+                text: `Nome: ${nome}\nEmail: ${email}\nCurso: ${curso}\nData de Início: ${start_date}\n Intervalo de trancamento: ${intervalo}`,
             };
 
             mailgunClient.messages().send(data, (error, body) => {
@@ -672,6 +679,8 @@
                 const email = document.querySelector('#mail');
                 const selectedCurso = document.querySelector('#curso');
                 const startDate = document.querySelector('#start-date').value;
+                //CHANGES
+                const intervalo = document.querySelector('#intervalo');
 
                 if (!isValidEmail(email.value)) {
                     errorDisplayers[1].textContent = 'Por favor, insira um e-mail válido.';
@@ -773,6 +782,12 @@
                     <label for="start-date">Início do curso</label>
                     <input type="date" name="data-inicio" id="start-date" required>
                     <div class="error"></div>
+                </div>
+                <!--CHANGES-->
+                <div class="input-container">
+                    <label for="periodo_trancamento"></label>
+                    <input type="text" name="intervalo" id="intervalo" required>
+                    <span class="span1">Intervalo de tempo</span>
                 </div>
 
                 <div id="btm">
