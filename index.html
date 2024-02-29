@@ -9,8 +9,8 @@
     <meta name="msapplication-navbutton-color" content="#06aa5e">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="icon" href="logo-img/logomarca.png">
     <title>Cancelamento | Codi Academy</title>
+    <link rel="icon" href="logo-img/logomarca.png">
     <style>
         /*adjust mobile responsivity*/
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
@@ -49,8 +49,8 @@
             overflow: hidden;
             background-color: var(--darky);
         }
-
-        .card-container  img {
+        
+        .card-container img {
             width: 80px;
             height: 80px;
             margin-right: 85%;
@@ -118,7 +118,6 @@
 
         .input-container {
             position: relative;
-            color: var(--form-txt); /* Alteração pendente no projeto hospedado*/
         }
 
         .modal-overlay {
@@ -239,7 +238,7 @@
         }
 
         .company {
-            font-size: 44px;
+            font-size: 34px;
             text-align: left;
             height: 70px;
             align-self: flex-start;
@@ -262,7 +261,7 @@
 
         .list {
             margin-bottom: 100px;
-            font-size: 18px;
+            font-size: 14px;
             margin-left: 50px;
         }
 
@@ -405,7 +404,7 @@
 
 
         /*
-    MEDIA QUERY SECTION
+    MEDIA QUERY SECTIONfo
 */
         @media only screen and (max-width: 540px) {
 
@@ -430,7 +429,7 @@
             }
 
             .list {
-                font-size: 16px;
+                font-size: 12px;
                 margin-right: 25px;
                 margin-bottom: 25px;
             }
@@ -445,6 +444,7 @@
                 overflow: hidden;
                 height: auto;
             }
+            
 
             .image-container {
                 width: 100%;
@@ -514,8 +514,8 @@
             margin-top: 5px;
             background-color: var(--darky);
             transition: all .5s ease-in;
-            outline: none;
             color: var(--form-txt);
+            outline: none;
             /* Remova a borda padrão do select no Firefox */
         }
 
@@ -539,7 +539,6 @@
             padding: 10px;
             pointer-events: none;
         }
-
 
         /* Efeitos de foco e valor válido para o select */
         input:focus~span,
@@ -728,19 +727,19 @@
 <body>
     <main class="card-container slideUp-animation">
         <div class="image-container">
-            <img src="logo-img/logomarca.png" alt="logo">
+            <img src="logo-img/CODI_ICONE_B.png" alt="logo">
             <h1 class="company">Codi Academy</h1>
-            <br>
+            
             <p class="company">Cancelamento de curso</p>
             <ul class="list">
                 <li>
-                    A Codi Academy é a escola n° 1 em atendimento ao cliente de acordo com o instituto idealize
+                    O cancelamento em um prazo de até 7 dias resulta na devolução integral do valor
                 </li><br>
                 <li>
-                    A Codi Academy oferece 24 tecnologias diversas para você destrinchar várias áreas do T.I
+                    O cancelamento após o 7º o dia, implica na devolução de 25% do valor, subtraído das as que já assistiu
                 </li><br>
                 <li>
-                    Oferecemos bootcamp's, eventos, workshops, conteúdos presenciais e online para te auxiliar na conquista de sua vaga
+                    Verifique se o seu contrato possui multa de cancelamento
                 </li>
             </ul>
         </div>
@@ -773,7 +772,7 @@
                 <div class="input-container">
                     <label for="curso">Curso</label>
                     <select name="curso" id="curso" required>
-                        <option value="" disabled selected placeholder="Selecione o curso"></option>
+                        <option value="" disabled selected>Escolha o curso</option>
                         <option value="frontend">Desenvolvimento FrontEnd</option>
                         <option value="backend">Desenvolvimento Backend</option>
                         <option value="fullstack">Desenvolvimento FullStack</option>
