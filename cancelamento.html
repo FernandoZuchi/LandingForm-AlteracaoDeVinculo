@@ -611,26 +611,6 @@
             background-color: darkgreen;
             color: lightgray;
         }
-
-        .index-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .card1 {
-            height: 100px;
-            width: 100px;
-            color:  #fff;
-            border: white 1px solid;
-        }
-
-        .card2 {
-            height: 100px;
-            width: 100px;
-            color:  #fff;
-            border: white 1px solid;
-        }
     </style>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
 
@@ -701,33 +681,86 @@
             <img src="logo-img/CODI_ICONE_B.png" alt="logo">
             <h1 class="company">Codi Academy</h1>
 
-            <p class="company">Alteração de Vínculo</p>
+            <p class="company">Cancelamento de curso</p>
             <ul class="list">
                 <li>
-                    Selecione ao lado qual tipo de alteração você deseja realizar. 
+                    O cancelamento em um prazo de até 7 dias resulta na devolução integral do valor
                 </li><br>
                 <li>
                     O cancelamento após o 7º o dia, implica na devolução de 25% do valor, subtraído das as que já
                     assistiu
                 </li><br>
                 <li>
-                    Verifique se o seu contrato possui multa de cancelamento/trancamento
+                    Verifique se o seu contrato possui multa de cancelamento
                 </li>
             </ul>
         </div>
+        <form action="" method="" class="">
+            <div class="form-container slideRight-animation">
 
-        <div class="index-container">
-            <div class="card1">
-                Card1
+                <h1 class="form-header">
+                    Preencha o formulário
+                </h1>
+
+                <div class="input-container">
+                    <label for="f-name"></label>
+                    <input type="text" name="Nome" id="f-name" required>
+                    <span>
+                        Nome completo
+                    </span>
+                    <div class="error"></div>
+                </div>
+
+                <div class="input-container">
+                    <label for="mail">
+                    </label>
+                    <input type="email" name="email" id="mail" required>
+                    <span>
+                        E-mail
+                    </span>
+                    <div class="error"></div>
+                </div>
+
+                <div class="input-container">
+                    <label for="curso">Curso</label>
+                    <select name="curso" id="curso" required>
+                        <option value="" disabled selected>Escolha o curso</option>
+                        <option value="frontend">Desenvolvimento FrontEnd</option>
+                        <option value="backend">Desenvolvimento Backend</option>
+                        <option value="fullstack">Desenvolvimento FullStack</option>
+                    </select>
+                    <div class="error"></div>
+                </div>
+
+                <div class="input-container">
+                    <label for="motivo">Motivo do cancelamento</label>
+                    <textarea id="motivo" name="motivo" style="width: 100%; height: 25px;"></textarea>
+                    <span>
+
+                    </span>
+                    <div class="error"></div>
+                </div>
+
+                <div class="input-container">
+                    <label for="pix">Chave Pix</label>
+                    <textarea name="pix" id="pix" style="width: 100%; height: 25px;"></textarea>
+                    <span>
+
+                    </span>
+                    <div class="error"></div>
+                </div>
+
+                <div id="btm">
+                    <button type="submit" class="submit-btn">Solicitar cancelamento</button>
+                </div>
+
+                <div class="modal-overlay disabled" id="success-modal">
+                    <p>Seu requerimento foi concluído e um e-mail para o suporte foi enviado.</p>
+                    <h4>Aguarde e retornaremos</h4>
+                    <button id="close-modal-btn" class="close-modal-btn">Fechar</button>
+                </div>
             </div>
-
-            <div class="card2">
-                Card2
-            </div>
-        </div>
-
-
-                
+        </form>
     </main>
 </body>
 

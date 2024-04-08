@@ -9,12 +9,11 @@
     <meta name="msapplication-navbutton-color" content="#06aa5e">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Cancelamento | Codi Academy</title>
+    <link rel="icon" src="logomarca.png">
+    <title>Trancamento | Codi Academy</title>
     <style>
-        /*adjust mobile responsivity*/
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
 
-        /* done */
         :root {
             --green: rgb(33, 250, 131);
             --red: rgb(252, 86, 108);
@@ -37,7 +36,6 @@
             background-color: #a243d2;
         }
 
-        /*Comment*/
 
         /* 
     MAIN(SIGN-UP CARD) SECTION
@@ -50,7 +48,7 @@
             overflow: hidden;
             background-color: var(--darky);
         }
-
+        
         .card-container img {
             width: 80px;
             height: 80px;
@@ -77,6 +75,18 @@
             margin-bottom: 30px;
             font-size: 20px;
             color: white;
+        }
+
+        input {
+            display: block;
+            border-radius: 4px;
+            border: 0;
+            border-bottom: 1px solid rgb(0, 0, 0, .4);
+            padding: 6px 6px 6px 10px;
+            margin-top: 5px;
+            background-color: rgba(255, 255, 255, 0);
+            transition: all .5s ease-in;
+            color: var(--opac-white);
         }
 
         input::placeholder {
@@ -126,7 +136,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 50%;
+            height: 100%;
             background: rgba(0, 0, 0, 0.5);
             justify-content: center;
             align-items: center;
@@ -185,19 +195,6 @@
             border: 1px solid var(--green);
         }
 
-        input,
-        textarea {
-            display: block;
-            border-radius: 4px;
-            border: 0;
-            border-bottom: 1px solid rgb(0, 0, 0, .4);
-            padding: 6px 6px 6px 10px;
-            margin-top: 5px;
-            background-color: rgba(255, 255, 255, 0);
-            transition: all .5s ease-in;
-            color: var(--cyny-green);
-        }
-
 
         /* 
     ERROR PROMPTER SECTION
@@ -223,10 +220,9 @@
             padding: 15px;
         }
 
-
         .image-container>ul {
             margin-top: 60px;
-            margin-left: 50px;
+            margin-left: 10px;
             padding: 30px;
         }
 
@@ -235,7 +231,8 @@
             width: 100%;
             height: 100%;
             text-align: center;
-            font-size: 24px;
+            font-size: 22px;
+            margin-left: 10px;
         }
 
         .company {
@@ -244,7 +241,7 @@
             height: 70px;
             align-self: flex-start;
             padding: 2% 0 0 5%;
-            margin-left: 50px;
+            margin-right: 25px;
         }
 
         .outro-overlay>.company {
@@ -263,7 +260,6 @@
         .list {
             margin-bottom: 100px;
             font-size: 14px;
-            margin-left: 50px;
         }
 
         /*
@@ -405,7 +401,7 @@
 
 
         /*
-    MEDIA QUERY SECTIONfo
+    MEDIA QUERY SECTION
 */
         @media only screen and (max-width: 540px) {
 
@@ -420,21 +416,13 @@
             .image-container>[class] {
                 transform: scale(1);
             }
-
-            .image-container>p {
-                font-size: 24px;
+            
+            .company {
+                display: block;
+                white-space: normal;
+                font-size: 22px;
             }
-
-            .image-container>h1 {
-                margin-right: 35px;
-            }
-
-            .list {
-                font-size: 12px;
-                margin-right: 25px;
-                margin-bottom: 25px;
-            }
-
+            
             .quote {
                 margin-top: -50px;
             }
@@ -445,7 +433,6 @@
                 overflow: hidden;
                 height: auto;
             }
-
 
             .image-container {
                 width: 100%;
@@ -520,7 +507,6 @@
             /* Remova a borda padrão do select no Firefox */
         }
 
-
         /* Estilização para a seta do select */
         select::-ms-expand {
             display: none;
@@ -530,7 +516,6 @@
         select option[disabled] {
             display: none;
         }
-
 
         /* Estilização do span para o select */
         .input-container select~span {
@@ -552,6 +537,7 @@
             padding: 0 6px;
             color: var(--cyny-green);
             background-color: #a243d2;
+            ;
             color: white;
             border-radius: 2px;
         }
@@ -612,39 +598,34 @@
             color: lightgray;
         }
 
-        .index-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
 
-        .card1 {
-            height: 100px;
-            width: 100px;
-            color:  #fff;
-            border: white 1px solid;
-        }
-
-        .card2 {
-            height: 100px;
-            width: 100px;
-            color:  #fff;
-            border: white 1px solid;
-        }
+        /* Adicione estilos para animação do modal, se desejar */
     </style>
+    <script src="./assets/js/script.js" defer></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.querySelector('form');
             const errorDisplayers = document.getElementsByClassName('error');
             const successModal = document.getElementById('success-modal');
             const closeModalBtn = document.getElementById('close-modal-btn');
-            const submitBtn = document.querySelector('.submit-btn')
+            const submitBtn = document.querySelector('.submit-btn');
+            const intervalo = document.querySelector('#intervalo');
 
             function isValidEmail(email) {
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 return emailRegex.test(email);
+            }
+
+            function isTrancamentoPermitido(startDate) {
+                const courseDurationMonths = 12;
+                const currentDate = new Date();
+                const courseStartDate = new Date(startDate);
+
+                const lastMonthStartDate = new Date(courseStartDate);
+                lastMonthStartDate.setMonth(lastMonthStartDate.getMonth() + courseDurationMonths);
+
+                return currentDate < lastMonthStartDate;
             }
 
             form.addEventListener('submit', async (e) => {
@@ -657,6 +638,7 @@
                 let isValid = true;
                 const email = document.querySelector('#mail');
                 const selectedCurso = document.querySelector('#curso');
+                const startDate = document.querySelector('#start-date').value;
 
                 if (!isValidEmail(email.value)) {
                     errorDisplayers[1].textContent = 'Por favor, insira um e-mail válido.';
@@ -668,12 +650,17 @@
                     isValid = false;
                 }
 
+                if (!startDate || !isTrancamentoPermitido(startDate)) {
+                    errorDisplayers[3].textContent = 'A data de início do curso não permite trancamento.';
+                    isValid = false;
+                }
+
                 if (isValid) {
                     submitBtn.classList.add('Disabled');
                     submitBtn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Enviando...';
                     const formData = new FormData(form);
                     const xhr = new XMLHttpRequest();
-                    xhr.open('POST', 'https://formsubmit.co/ajax/cancelamento@codiacademy.com', true);
+                    xhr.open('POST', 'https://formsubmit.co/ajax/trancamentocodiacademy@gmail.com', true);
                     xhr.onreadystatechange = function () {
                         if (xhr.readyState === 4 && xhr.status === 200) {
                             successModal.style.display = 'flex';
@@ -691,43 +678,96 @@
                 location.reload();
             });
         });
-    </script>
 
+    </script>
 </head>
 
 <body>
     <main class="card-container slideUp-animation">
         <div class="image-container">
-            <img src="logo-img/CODI_ICONE_B.png" alt="logo">
-            <h1 class="company">Codi Academy</h1>
-
-            <p class="company">Alteração de Vínculo</p>
+            <img src="CODI_ICONE_B.png" alt="logo">
+            <h1 class="company">&nbsp;&nbsp;&nbsp;&nbsp;Codi Academy</h1>
+            <br><br>
+            <p class="company">&nbsp;&nbsp;&nbsp;&nbsp;Requisitos para trancar <br>&nbsp;&nbsp;&nbsp;&nbsp;um curso na Codi Academy</p>
+            <br><br>
             <ul class="list">
                 <li>
-                    Selecione ao lado qual tipo de alteração você deseja realizar. 
-                </li><br>
+                    Você pode trancar o curso por 3, 6, 9 ou 12 meses
+                </li>
                 <li>
-                    O cancelamento após o 7º o dia, implica na devolução de 25% do valor, subtraído das as que já
-                    assistiu
-                </li><br>
+                    Estar cursando a pelo menos 1 mês
+                </li>
                 <li>
-                    Verifique se o seu contrato possui multa de cancelamento/trancamento
+                    O trancamento não pode ser feito no último mês de curso
                 </li>
             </ul>
         </div>
+        <form action="https://formsubmit.co/ajax/trancamentocodiacademy@gmail.com" method="POST" class="">
+            <div class="form-container slideRight-animation">
 
-        <div class="index-container">
-            <div class="card1">
-                Card1
-            </div>
+                <h1 class="form-header">
+                    Preencha o formulário
+                </h1>
 
-            <div class="card2">
-                Card2
-            </div>
-        </div>
+                <div class="input-container">
+                    <label for="f-name"></label>
+                    <input type="text" name="Nome" id="f-name" required>
+                    <span>
+                        Nome completo
+                    </span>
+                    <div class="error"></div>
+                </div>
 
+                <div class="input-container">
+                    <label for="mail">
+                    </label>
+                    <input type="email" name="email" id="mail" required>
+                    <span>
+                        E-mail
+                    </span>
+                    <div class="error"></div>
+                </div>
 
+                <div class="input-container">
+                    <label for="curso">Curso</label>
+                    <select name="curso" id="curso" required>
+                        <option value="" disabled selected>Escolha o curso</option>
+                        <option value="frontend">Desenvolvimento FrontEnd</option>
+                        <option value="backend">Desenvolvimento Backend</option>
+                        <option value="fullstack">Desenvolvimento FullStack</option>
+                    </select>
+                    <div class="error"></div>
+                </div>
+
+                <div class="input-container">
+                    <label for="start-date">Início do curso</label>
+                    <input type="date" name="data-inicio" id="start-date" required>
+                    <div class="error"></div>
+                </div>
                 
+                    <!--CHANGES-->
+                <div class="input-container">
+                    <label for="periodo_trancamento">Intervalor de tempo</label>
+                    <select name="intervalo" id="intervalo" required>
+                        <option value="" disabled selected>Escolha o intervalo de tempo</option>
+                        <option value="3-meses">3 meses</option>
+                        <option value="6-meses">6 meses</option>
+                        <option value="9-meses">9 meses</option>
+                        <option value="12-meses">12 meses</option>
+                    </select>
+                </div>
+
+                <div id="btm">
+                    <button type="submit" class="submit-btn">Solicitar trancamento</button>
+                </div>
+
+                <div class="modal-overlay disabled" id="success-modal">
+                    <p>Seu requerimento foi concluído e um e-mail para o suporte foi enviado.</p>
+                    <h4>Aguarde e retornaremos com mais informações</h4>
+                    <button id="close-modal-btn" class="close-modal-btn">Fechar</button>
+                </div>
+            </div>
+        </form>
     </main>
 </body>
 
