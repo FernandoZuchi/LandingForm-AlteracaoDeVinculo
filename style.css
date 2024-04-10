@@ -492,6 +492,7 @@
             }
 
             .card {
+               
                 max-width: calc(50% - 20px); /* Define a largura para ocupar metade da largura do contêiner, com espaçamento entre os cards */
             }
         }
@@ -645,14 +646,14 @@
             background-color: #a243d2;
         } 
         
-        .card .card-body button {
+        .card .card-body  a {
             background-color: #a243d2;
             border-radius: 5px;
             outline: none;
             color: aliceblue;
         }
 
-        .card .card-body button:hover {
+        .card .card-body a:hover {
             background-color: forestgreen; /* Cinza claro */
         }
 
@@ -660,7 +661,6 @@
             height: 3px;
             color: #a243d2;
             background-color: #a243d2;
-            
         }
 
 
