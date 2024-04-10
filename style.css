@@ -400,6 +400,24 @@
             /* 
         For mobile phones: 
     */
+
+            .card-container {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                /* Espaçamento entre os cards */
+            }
+
+            /* Ajuste da largura dos cards para ocupar toda a largura disponível */
+            .card {
+                width: 100%;
+                /* Ocupa toda a largura disponível */
+                max-width: none;
+                /* Remove a largura máxima para ocupar a largura total */
+                margin: 0 auto;
+                /* Centraliza horizontalmente */
+            }
+
             body {
                 width: 100%;
                 overflow: visible;
@@ -492,8 +510,9 @@
             }
 
             .card {
-               
-                max-width: calc(50% - 20px); /* Define a largura para ocupar metade da largura do contêiner, com espaçamento entre os cards */
+
+                max-width: calc(50% - 20px);
+                /* Define a largura para ocupar metade da largura do contêiner, com espaçamento entre os cards */
             }
         }
 
@@ -604,20 +623,22 @@
             background-color: darkgreen;
             color: lightgray;
         }
-        
+
         .card-container {
             display: flex;
             justify-content: flex-end;
-            align-items: center; /* Centraliza os cards verticalmente */
+            align-items: center;
+            /* Centraliza os cards verticalmente */
             gap: 20px;
         }
 
         .card {
             max-width: 24rem;
-            margin: 0 auto; /* Centraliza horizontalmente */
-            max-height: 500px; 
+            margin: 0 auto;
+            /* Centraliza horizontalmente */
+            max-height: 500px;
             padding: 5px;
-            
+
         }
 
         .card-body {
@@ -636,17 +657,16 @@
         }
 
         .card .card-header {
-           background-color: #a243d2;
-           color: aliceblue;
-           font-size: 24px;
+            background-color: #a243d2;
+            color: aliceblue;
+            font-size: 24px;
         }
 
-        .card .card-footer
-        {
+        .card .card-footer {
             background-color: #a243d2;
-        } 
-        
-        .card .card-body  a {
+        }
+
+        .card .card-body a {
             background-color: #a243d2;
             border-radius: 5px;
             outline: none;
@@ -654,7 +674,8 @@
         }
 
         .card .card-body a:hover {
-            background-color: forestgreen; /* Cinza claro */
+            background-color: forestgreen;
+            /* Cinza claro */
         }
 
         .card .card-body hr {
@@ -662,11 +683,3 @@
             color: #a243d2;
             background-color: #a243d2;
         }
-
-
-
-
-
-        
-
-           
