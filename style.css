@@ -24,12 +24,13 @@
             background-color: #a243d2;
         }
 
+
         /*Comment*/
 
         /* 
     MAIN(SIGN-UP CARD) SECTION
 */
-        .card-container {
+        .left-container {
             display: grid;
             grid-template-columns: calc(100% - 60%) auto;
             height: 100vh;
@@ -38,7 +39,7 @@
             background-color: var(--darky);
         }
 
-        .card-container img {
+        .left-container img {
             width: 80px;
             height: 80px;
             margin-right: 85%;
@@ -426,7 +427,7 @@
                 margin-top: -50px;
             }
 
-            .card-container {
+            .left-container {
                 grid-template-rows: 100vh minmax(100vh, auto);
                 grid-template-columns: none;
                 overflow: hidden;
@@ -598,34 +599,69 @@
             background-color: darkgreen;
             color: lightgray;
         }
-
-        .index-container {
+        
+        .card-container {
             display: flex;
-            align-items: center;
-            justify-content: space-around;
-            text-align: center;
+            justify-content: flex-end;
+            align-items: center; /* Centraliza os cards verticalmente */
+            gap: 20px;
         }
 
-        .card1 {
-            height: 45%;
-            width: 25%;
-            color:  #fff;
-            border: white 1px solid;
-            font-size: 14px;
-            border-radius: 10px;
+        .card {
+            max-width: 24rem;
+            margin: 0 auto; /* Centraliza horizontalmente */
+            max-height: 500px; 
+            padding: 5px;
+            
         }
 
-        .card2 {
-            height: 45%;
-            width: 25%;
-            color:  #fff;
-            border: white 1px solid;
-            font-size: 14px;
-            border-radius: 10px;
+        .card-body {
+            background-color: #1d2b3a;
+            border: #a243d2 1px solid;
         }
 
-        .index-container button {
-            width: 50px;
-            margin-top: 100%;
+        .card-body .card-text {
+            color: aliceblue;
+            font-size: 16px;
         }
+
+        .card-body .card-title {
+            color: aliceblue;
+            font-size: 24px;
+        }
+
+        .card .card-header {
+           background-color: #a243d2;
+           color: aliceblue;
+        }
+
+        .card .card-footer
+        {
+            background-color: #a243d2;
+        } 
+        
+        .card .card-body button {
+            background-color: #a243d2;
+            border-radius: 5px;
+            outline: none;
+            color: aliceblue;
+        }
+
+        .card .card-body button:hover {
+            background-color: forestgreen; /* Cinza claro */
+        }
+
+        .card .card-body hr {
+            height: 3px;
+            color: #a243d2;
+            background-color: #a243d2;
+            
+        }
+
+
+
+
+
+        
+
            
