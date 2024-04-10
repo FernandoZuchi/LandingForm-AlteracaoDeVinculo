@@ -393,12 +393,55 @@
 
 
         /*
-    MEDIA QUERY SECTIONfo
+    RESPONSIVIDADE PARA NOTEBOOKS E CELULARES
 */
+
+        @media only screen and (min-width: 768px) and (max-width: 1396px) {
+
+            /* Reduzir a largura máxima dos cards para dispositivos maiores */
+            .card {
+                max-width: 20%;
+                /* Definir largura máxima dos cards em proporção à tela */
+                max-height: 20%;
+                /* Definir altura máxima dos cards em proporção à tela */
+                padding: 10px;
+                /* Diminuir a margem interna dos cards */
+            }
+
+            /* Adicionar um espaçamento entre os cards */
+            .card-container {
+                gap: 20px;
+                display: flex;
+                flex-direction: column;
+                /* Espaçamento entre os cards */
+            }
+        }
+
+        @media only screen and (min-width: 540px) and (max-width: 768px) {
+            .card-container {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                /* Espaçamento entre os cards */
+            }
+
+            /* Ajuste da largura dos cards para ocupar toda a largura disponível */
+            .card {
+                width: 100%;
+                /* Ocupa toda a largura disponível */
+                max-width: none;
+                /* Remove a largura máxima para ocupar a largura total */
+                margin: 0 auto;
+                /* Centraliza horizontalmente */
+            }
+
+        }
+
+
         @media only screen and (max-width: 540px) {
 
             /* 
-        For mobile phones: 
+        Para celularess: 
     */
 
             .card-container {
