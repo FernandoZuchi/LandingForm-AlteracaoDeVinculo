@@ -408,32 +408,12 @@
                 /* Diminuir a margem interna dos cards */
             }
 
-            
 
-        }
-
-        @media only screen and (min-width: 540px) and (max-width: 768px) {
-            .card-container {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                /* Espaçamento entre os cards */
-            }
-
-            /* Ajuste da largura dos cards para ocupar toda a largura disponível */
-            .card {
-                width: 100%;
-                /* Ocupa toda a largura disponível */
-                max-width: none;
-                /* Remove a largura máxima para ocupar a largura total */
-                margin: 0 auto;
-                /* Centraliza horizontalmente */
-            }
 
         }
 
 
-        @media only screen and (max-width: 540px) {
+        @media only screen and (max-width: 920px) {
 
             /* 
         Para celularess: 
