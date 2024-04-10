@@ -490,6 +490,10 @@
                 font-size: 20px;
                 order: 1;
             }
+
+            .card {
+                max-width: calc(50% - 20px); /* Define a largura para ocupar metade da largura do contêiner, com espaçamento entre os cards */
+            }
         }
 
         /* Estilização do novo select */
@@ -627,12 +631,13 @@
 
         .card-body .card-title {
             color: aliceblue;
-            font-size: 24px;
+            font-size: 25px;
         }
 
         .card .card-header {
            background-color: #a243d2;
            color: aliceblue;
+           font-size: 24px;
         }
 
         .card .card-footer
